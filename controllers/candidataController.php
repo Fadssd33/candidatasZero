@@ -11,8 +11,10 @@
             }
 
             function listadoCandidatas() {
-                $candidata = new Candidata();
+               $candidata = new Candidata();
                $candidatas = $candidata->getCandidatas();
+               $carreraCandidata = $candidata->getCarrera();
+              
               require_once 'views/listadoCandidatas.php';
 
               

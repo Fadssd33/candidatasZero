@@ -16,5 +16,10 @@
 
         }
 
+        function getCarrera() {
+            $candidataCarrera = $this->db->query("SELECT Nombre from carreras WHERE CarreraID IN (SELECT CarreraID FROM candidatas)");
+            return $candidataCarrera;
+        }
+
     }
 ?>

@@ -32,12 +32,14 @@
                                         <div class="card card-member">
                                             <div class="content">
                                                 <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_1.jpg"/>
+                                                    <!-- <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_1.jpg"/> -->
+                                                    <img alt="..." class="img-circle" src="<?$scan->imagen?>"/>
                                                 </div>
                                                 <div class="description">
-                                                    <h3 class="title">Tina</h3>
-                                                    <p class="small-text">CEO / Co-Founder</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
+                                                    <h3 class="title"><?=$can->Nombre;?></h3>
+                                                    <!-- Mostrar la carrera -->
+                                                    <p class="small-text">Carrera aqui</p>
+                                                    <p class="description"><?=$can->descripcion?></p>
                                                 </div>
                                             </div>
                                         </div>
