@@ -29,8 +29,50 @@
             public function guardarCandidata() {
               Utils::isAdmin();
               if(isset($_POST)) {
-                var_dump($_POST);
+                $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+                $apellidoMaterno = isset($_POST['apellidoMaterno']) ? $_POST['apellidoMaterno'] : false;
+                $apellidoPaterno = isset($_POST['apellidoPaterno']) ? $_POST['apellidoPaterno'] : false; 
+                $correo = isset($_POST['correo']) ? $_POST['correo'] : false;
+                $carrera = isset($_POST['carrera']) ? $_POST['carrera'] : false;
+                $sexo = isset($_POST['sexo']) ? $_POST['sexo'] : false;
+                $edad = isset($_POST['edad']) ? $_POST['edad'] : false;
+                $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
+                $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
+
+                if($nombre && $apellidoMaterno && $apellidoPaterno && $correo && $carrera && $sexo && $edad && $descripcion) {
+                    $candidataGuardar = new Candidata();
+                    $candidataGuardar->Nombre = $nombre;
+                    $candidataGuardar->ApellidoMaterno = $apellidoMaterno;
+                    $candidataGuardar->ApellidoPaterno = $apellidoPaterno;
+                    $candidataGuardar->Correo = $correo;
+                    $candidataGuardar->CarreraID = $carrera;
+                    $candidataGuardar->Sexo = $sexo;
+                    $candidataGuardar->Edad = $edad;
+                    $candidataGuardar->imagen = $imagen;
+                    $candidataGuardar->descripcion = $descripcion;
+                   
+
+                   $guardar = $candidataGuardar->guardar();
+                   if($guardar) {
+                     $_SESSION['candidataGuardada'] = "complete";
+
+                   }
+                   else  {
+                    $_SESSION['candidataGuardada'] = "failed";
+
+                   }
+                } 
+                else {
+                  $_SESSION['candidataGuardada'] = "Algo no llego correctamente";
+
+                }
               }
+              else {
+                $_SESSION['candidataGuardada'] = "No llego nada por POST";
+
+              }
+
+              header('Location:' . base_url . 'candidata/agregarCandidata');
             }
     
         
