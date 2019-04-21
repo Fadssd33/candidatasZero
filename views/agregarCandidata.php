@@ -34,7 +34,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="testimonial1">
 
-                <form action="<?=base_url?>candidata/guardarCandidata" method="POST">
+                <form action="<?=base_url?>candidata/guardarCandidata" method="POST" enctype="multipart/form-data">
                     <label for="nombre">Nombre:     </label> <input type="text" name="nombre"/><br>
                     <label for="apellidoMaterno">Apellido Materno:     </label> <input type="text" name="apellidoMaterno"/>
                     <label for="apellidoPaterno">Apellido Paterno:     </label> <input type="text" name="apellidoPaterno"/><br>

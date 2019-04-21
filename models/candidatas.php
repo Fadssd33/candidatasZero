@@ -24,7 +24,7 @@
         }
 
         function guardar() {
-            $sql = "INSERT INTO candidatas VALUES (NULL, '{$this->Nombre}', '{$this->ApellidoMaterno}','{$this->ApellidoPaterno}', '{$this->Correo}',{$this->CarreraID}, {$this->Sexo}, {$this->Edad},0,NULL,'{$this->descripcion}');";
+            $sql = "INSERT INTO candidatas VALUES (NULL, '{$this->Nombre}', '{$this->ApellidoMaterno}','{$this->ApellidoPaterno}', '{$this->Correo}',{$this->CarreraID}, {$this->Sexo}, {$this->Edad},0,'{$this->imagen}','{$this->descripcion}');";
             $save = $this->db->query($sql);
             // $this->db-error;
             // die();

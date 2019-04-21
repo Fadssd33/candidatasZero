@@ -32,8 +32,7 @@
                                         <div class="card card-member">
                                             <div class="content">
                                                 <div class="avatar avatar-danger">
-                                                    <!-- <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_1.jpg"/> -->
-                                                    <img alt="..." class="img-circle" src="<?$can->imagen?>"/>
+                                                    <img alt="..." class="img-circle" src="<?=base_url?>uploads/images/<?=$can->imagen?>"/>
                                                 </div>
                                                 <div class="description">
                                                     <h3 class="title"><?=$can->Nombre;?></h3>

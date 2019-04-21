@@ -48,9 +48,23 @@
                     $candidataGuardar->CarreraID = $carrera;
                     $candidataGuardar->Sexo = $sexo;
                     $candidataGuardar->Edad = $edad;
-                    $candidataGuardar->imagen = $imagen;
                     $candidataGuardar->descripcion = $descripcion;
-                   
+
+                   //Guadar foto
+                   $file = $_FILES['imagen'];
+                   $fileName = $file['name'];
+                   $mimetype = $file['type'];
+
+                   if($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/gif") {
+                      if(!is_dir('uploads/images')) {
+                        mkdir('uploads/images', 0777, true);
+                      }
+                      $candidataGuardar->imagen = $fileName;
+                      
+                      
+                      move_uploaded_file($file['tmp_name'], 'uploads/images/' . $fileName);
+                      
+                   }
 
                    $guardar = $candidataGuardar->guardar();
                    if($guardar) {
