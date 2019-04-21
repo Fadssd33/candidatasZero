@@ -1,7 +1,7 @@
 <?php 
     require_once 'config/db.php';
     Class Candidata {
-        private $candidataID, $Nombre, $ApellidoMaterno, $ApellidoPaterno, $Correo, $Sexo, $Edad, $numVotos, $imagen, $descripcion;
+        private $candidataID, $Nombre, $ApellidoMaterno, $ApellidoPaterno, $Correo, $Sexo, $Edad, $numVotos, $imagen, $descripcion, $NombreCarrera;
         
         private $db;
 
@@ -11,15 +11,18 @@
         }
 
         function getCandidatas() {
-            $candidatas = $this->db->query("SELECT * FROM candidatas");
+            $candidatas = $this->db->query("SELECT CandidataID, Nombre, ApellidoMaterno, ApellidoPaterno, Correo, Sexo, Edad, numVotos, imagen, descripcion, NombreCarrera  FROM candidatas INNER JOIN carreras ON carreras.CarreraID =  candidatas.CarreraID");
             return $candidatas;
 
         }
 
-        function getCarrera() {
-            $candidataCarrera = $this->db->query("SELECT Nombre from carreras WHERE CarreraID IN (SELECT CarreraID FROM candidatas)");
-            return $candidataCarrera;
+        function getFirstThree() {
+            // $firstThree = $this->db->query("SELECT * FROM candidatas LIMIT 3");
+            $firstThree = $this->db->query("SELECT CandidataID, Nombre, ApellidoMaterno, ApellidoPaterno, Correo, Sexo, Edad, numVotos, imagen, descripcion, NombreCarrera  FROM candidatas INNER JOIN carreras ON carreras.CarreraID =  candidatas.CarreraID LIMIT 3");
+
+            return $firstThree;
         }
 
+     
     }
 ?>

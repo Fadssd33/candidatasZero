@@ -60,7 +60,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <a href="#">
+                    <a href="<?=base_url?>candidata/agregarCandidata">
                     <div class="info-icon">
                         <div class="icon text-danger">
                             <i class="pe-7s-add-user"></i> 
@@ -116,6 +116,7 @@
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="row">
+                                <?php while($can = $candidatas->fetch_object()): ?>
                                     <div class="col-md-4">
                                         <div class="card card-member">
                                             <div class="content">
@@ -123,41 +124,17 @@
                                                     <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_1.jpg"/>
                                                 </div>
                                                 <div class="description">
-                                                    <h3 class="title">Tina</h3>
-                                                    <p class="small-text">CEO / Co-Founder</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
+                                                    <h3 class="title"><?=$can->Nombre;?></h3>
+                                                    <p class="small-text"><?=$can->NombreCarrera;?></p>
+                                                    <p class="description"><?=$can->descripcion?></p>
+                                                    <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill">Mas informacion</a>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_4.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Andrew</h3>
-                                                    <p class="small-text">Product Designer</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_3.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Michelle</h3>
-                                                    <p class="small-text">Marketing Hacker</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <?php endwhile;?>
+                                    
                                         <!-- Fin carta -->
                                 </div>
                             </div>
@@ -172,8 +149,8 @@
     <div class="section section-our-clients-freebie">
         <div class="container">
             <div class="title-area">
-                <h5 class="subtitle text-gray">Here are some</h5>
-                <h2>Clients Testimonials</h2>
+                <h5 class="subtitle text-gray">Estos son los</h5>
+                <h2>Jueces</h2>
                 <div class="separator separator-danger">∎</div>
             </div>
 
@@ -181,14 +158,14 @@
                 <li class="active">
                     <a href="#testimonial1" role="tab" data-toggle="tab">
                         <div class="image-clients">
-                            <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_5.jpg"/>
+                            <img alt="..." class="img-circle" src="<?=base_url?>assets\img\rupaul-400x400.jpg"/>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="#testimonial2" role="tab" data-toggle="tab">
                         <div class="image-clients">
-                            <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_6.jpg"/>
+                            <img alt="..." class="img-circle" src="<?=base_url?>assets\img\michellevisage.jpg"/>
                         </div>
                     </a>
                 </li>
@@ -226,17 +203,17 @@
     <div class="section section-small section-get-started">
         <div class="parallax filter">
             <div class="image"
-                style="background-image: url('<?=base_url?>assets/img/office-1.jpeg')">
+                style="background-image: url('<?=base_url?>assets/img/queen.png')">
             </div>
             <div class="container">
                 <div class="title-area">
-                    <h2 class="text-white">Do you want to work with us?</h2>
+                    <h2 class="text-white">¿Quieres participar como candidata?</h2>
                     <div class="separator line-separator">♦</div>
-                    <p class="description"> We are keen on creating a second skin for anyone with a sense of style! We design our clothes having our customers in mind and we never disappoint!</p>
+                    <p class="description">Solo tienes que ser estudiante de la UES y un poco gay!</p>
                 </div>
 
                 <div class="button-get-started">
-                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contact Us</a>
+                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contacto</a>
                 </div>
             </div>
         </div>

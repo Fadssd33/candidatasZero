@@ -73,7 +73,7 @@
 						¿No tienes cuenta? <a href="#" class="ml-2">Registrarse</a>
 					</div>
 					<div class="d-flex justify-content-center links">
-						<a href="#">-volver a inicio</a>
+						<a href="<?=base_url?>candidata/index">-volver a inicio</a>
 					</div>
 				</div>
 			</div>

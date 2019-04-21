@@ -33,12 +33,12 @@
                                             <div class="content">
                                                 <div class="avatar avatar-danger">
                                                     <!-- <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_1.jpg"/> -->
-                                                    <img alt="..." class="img-circle" src="<?$scan->imagen?>"/>
+                                                    <img alt="..." class="img-circle" src="<?$can->imagen?>"/>
                                                 </div>
                                                 <div class="description">
                                                     <h3 class="title"><?=$can->Nombre;?></h3>
                                                     <!-- Mostrar la carrera -->
-                                                    <p class="small-text">Carrera aqui</p>
+                                                    <p class="small-text"><?=$can->NombreCarrera;?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
                                                 </div>
                                             </div>
