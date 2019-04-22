@@ -108,7 +108,7 @@
                         <div class="title-area">
                             <h2>Candidatas</h2>
                             <div class="separator separator-danger">✻</div>
-                            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, ab non? Distinctio exercitationem quaerat obcaecati officia voluptates, sed temporibus et commodi corrupti molestias unde, accusantium adipisci recusandae doloremque dolor quis.</p>
+                            <p class="description">En el siguiente apartado se enciuentras las mas sabrosas de la escuela  ahi para que waches la que mas te gusta carnal .</p>
                         </div>
                     </div>
 
