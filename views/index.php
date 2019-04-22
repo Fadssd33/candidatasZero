@@ -132,11 +132,7 @@
                                                        
                                                         <input type="submit" value="Votar" name="<?=$can->CandidataID?>" class="btn btn-danger btn-fill">
                                                       
-                                                        <!-- Modal para votar -->
-                                                        <!-- Button trigger modal -->
-                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                                            Launch demo modal
-                                                            </button>
+                                                      <!-- Button trigger modal -->
 
                                                            
 
