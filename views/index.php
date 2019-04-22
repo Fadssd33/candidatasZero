@@ -209,7 +209,7 @@
                 <div class="title-area">
                     <h2 class="text-white">¿Quieres participar como candidata?</h2>
                     <div class="separator line-separator">♦</div>
-                    <p class="description">Solo tienes que ser estudiante de la UES y un poco gay!</p>
+                    <p class="description">Solo tienes que ser estudiante de la UES, muy gay o puta!</p>
                 </div>
 
                 <div class="button-get-started">
