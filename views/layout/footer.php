@@ -8,10 +8,7 @@
                             <ul>
                                 <li>
                                     <a href="#">Home</a></li>
-                                <li>
-                                    <a href="#">Find offers</a>
-                                </li>
-                                
+                               
                                 <li>
                                     <a href="#">Our Portfolio</a>
                                 </li>
@@ -31,17 +28,12 @@
                                     <a href="#">Contact Us</a>
                                 </li>
                                 <li>
-                                    <a href="#">How it works</a>
-                                </li>
-                                <li>
                                     <a href="#">Terms &amp; Conditions</a>
                                 </li>
                                 <li>
                                     <a href="#">Company Policy</a>
                                 </li>
-                                <li>
-                                    <a href="#">Money Back</a>
-                                </li>
+                                
                             </ul>
                         </nav>
                     </div>
@@ -52,14 +44,14 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is here, just give it a try and let us...
+                                    <a href="https://twitter.com/ues_mx">
+                                        <i class="fa fa-twitter"></i> <b>ues_mx</b> En twitter, mantente actualizado con cada tweet..
                                         <hr class="hr-small">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> We've just been featured on <b> Awwwards Website</b>! Thank you everybody for...
+                                    <a href="https://twitter.com/?lang=es">
+                                        <i class="fa fa-twitter"></i> Tambien participa con <b> tu cuenta </b> y cuentanos que tal..
                                     </a>
                                 </li>
                             </ul>
@@ -71,23 +63,24 @@
                         <h5 class="title">Follow us on</h5>
                         <nav>
                             <ul>
+                            
                                 <li>
-                                    <a href="#" class="btn btn-social btn-facebook btn-simple">
+                                    <a href="https://es-la.facebook.com/ues.mx/" class="btn btn-social btn-facebook btn-simple">
                                         <i class="fa fa-facebook-square"></i> Facebook
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-social btn-dribbble btn-simple">
-                                        <i class="fa fa-dribbble"></i> Dribbble
+                                    <a href="https://www.instagram.com/ues.mx/" class="btn btn-social btn-dribbble btn-simple">
+                                        <i class="fa fa-Instagram"></i> Instagram
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-social btn-twitter btn-simple">
+                                    <a href="https://twitter.com/ues_mx" class="btn btn-social btn-twitter btn-simple">
                                         <i class="fa fa-twitter"></i> Twitter
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-social btn-reddit btn-simple">
+                                    <a href="https://ues.itslearning.com/index.aspx?SessionExpired=0" class="btn btn-social btn-reddit btn-simple">
                                         <i class="fa fa-google-plus-square"></i> Google+
                                     </a>
                                 </li>
