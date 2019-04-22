@@ -95,6 +95,22 @@
                $candidatas = $candidata->getCandidatas();
               require_once 'views/eliminarCandidata.php';
             }
+
+            public function eliminarCandidata2() {
+              
+                Utils::isAdmin();
+                $candidata = new Candidata();
+                $candidataDelete = $candidata->delete($_POST['candidataID']);
+                if($candidataDelete) {
+                  $_SESSION['candidataEliminada'] = 'complete';
+
+                }
+                else {
+                  $_SESSION['candidataEliminada'] = 'failed';
+                }
+
+                header('Location:' . base_url . 'candidata/eliminarcandidata');
+            }
     
         
         

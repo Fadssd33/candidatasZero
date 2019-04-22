@@ -4,19 +4,7 @@
     require_once 'views/layout/head.php';
     require_once 'views/layout/navbar.php';
 ?>
-<!-- <div class="card card-blog">
-     <a href="#gaia" class="header">
-         <img src="../assets/img/header-6.jpeg" class="image-header">
-     </a>
-     <div class="content">
-         <h6 class="card-date">Feb 17</h6>
-         <a href="#gaia" class="card-title">
-             <h3>Nature &amp; The Catch of the Day</h3>
-         </a>
-         <div class="line-divider line-danger"></div>
-         <h6 class="card-category">Nature</h6>
-     </div>
- </div> -->
+
 
  <div class="section section-our-clients-freebie">
         <div class="container">
@@ -24,7 +12,19 @@
                 <h5 class="subtitle text-gray">Eliminar</h5>
                 <h2>Candidatas</h2>
                 <div class="separator separator-danger">∎</div>
-                
+                <?php if(isset($_SESSION['candidataEliminada']) && $_SESSION['candidataEliminada'] == "complete"):?>
+                <!-- Cambiar esto a verde -->
+                     <p class="description">
+                       Candidata eliminada correctamente.
+                    </p> <br>
+                <?php elseif(isset($_SESSION['candidataEliminada']) && $_SESSION['candidataEliminada'] != "complete"):?>
+                    <!-- Cambiar esto a rojo -->
+                    
+                    <p class="description">
+                        ERROR: La candidata no se ha eliminado.
+                    </p> <br>
+                <?php endif;?>
+                <?= Utils::deleteSession('candidataEliminada');?>
             </div>
            
             
@@ -46,6 +46,14 @@
                                                     <!-- Mostrar la carrera -->
                                                     <p class="small-text"><?=$can->NombreCarrera;?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
+                                                    <form action="<?=base_url?>candidata/eliminarCandidata2" method="POST">
+                                                        <!-- pasa el id de la candidata -->
+                                                        <input type="text" value="<?=$can->CandidataID?>" name="candidataID" style="display:none;">
+                                                        
+                                                        <input type="submit" value="eliminar" name="candidata" class="btn btn-black btn-fill">
+                                                    </form>
+                                                    
+
                                                 </div>
                                             </div>
                                         </div>

@@ -45,6 +45,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
+				<!-- Manda datos inicio de sesion -->
 					<form action="<?=base_url?>alumno/login" method="post">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
