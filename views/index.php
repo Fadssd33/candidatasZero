@@ -100,7 +100,7 @@
 
     <div class="section section-our-team-freebie" id="candidatas">
         <div class="parallax filter filter-color-black">
-            <div class="image" style="background-image:url('<?=base_url?>assets/img/header-2.jpeg')">
+            <div class="image" style="background-image:url('<?=base_url?>assets/img/khaleesi.jpg')">
             </div>
             <div class="container">
                 <div class="content">
