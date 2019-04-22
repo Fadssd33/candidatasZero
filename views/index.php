@@ -83,7 +83,7 @@
                 </a>
                 </div>
                 <div class="col-md-4">
-                <a href="#">
+                <a href="<?=base_url?>candidata/modificarCandidata">
                     <div class="info-icon">
                         <div class="icon text-danger">
                             <i class="pe-7s-note"></i>
