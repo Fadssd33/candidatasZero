@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="content">
                     <div class="title-area">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Evento anual estudiantil de las...</p>
                         <h1 class="title-modern">Candidatas UES</h1>
                         <?php if(!isset($_SESSION['identity'])):?>
                         <h3>Inicia sesion para votar por la mas guapa 🌚</h2>
@@ -55,7 +55,7 @@
                 <div class="title-area">
                     <h2>Servicios de Administrador</h2>
                     <div class="separator separator-danger">✻</div>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique rem quibusdam earum odio hic ex quod labore, debitis, repellendus facere ad ipsam consequatur laudantium quae iusto non corporis tenetur impedit.</p>
+                    <p class="description">Apartado exclusivo para el administrador, encargado de llevar el manejo y contro de las candidatas a reina en el cual contara con la responsabilidad de agregar, eliminar y editar si asi es el caso de las estudiantes que se encuentren inscritas en el evento.</p>
                 </div>
             </div>
             <div class="row">
@@ -66,7 +66,7 @@
                             <i class="pe-7s-add-user"></i> 
                         </div>
                         <h3>Agregar Candidata</h3>
-                        <p class="description">We make our design perfect for you. Our adjustment turn our clothes into your clothes.</p>
+                        <p class="description">Agrega a una estudiante que deseé participar en el puesto de candidata a reina.</p>
                     </div>
                     </a>
                 </div>
@@ -78,7 +78,7 @@
                             <i class="pe-7s-delete-user"></i>
                         </div>
                         <h3>Eliminar Candidata</h3>
-                        <p class="description">We create a persona regarding the multiple wardrobe accessories that we provide..</p>
+                        <p class="description">Elimina a una estudiante de la cual no se requiera en el evento su participacion a candidata a reina.</p>
                     </div>
                 </a>
                 </div>
@@ -89,7 +89,7 @@
                             <i class="pe-7s-note"></i>
                         </div>
                         <h3>Editar Candidata</h3>
-                        <p class="description">We like to present the world with our work, so we make sure we spread the word regarding our clothes.</p>
+                        <p class="description">Si existe una candidata inscrita pero con datos erroneos, modifica su informacion.</p>
                     </div>
     </a>
                 </div>
@@ -162,7 +162,7 @@
     <div class="section section-our-clients-freebie">
         <div class="container">
             <div class="title-area">
-                <h5 class="subtitle text-gray">Estos son los</h5>
+                <h5 class="subtitle text-gray">Estas son las</h5>
                 <h2>Jueces</h2>
                 <div class="separator separator-danger">∎</div>
             </div>

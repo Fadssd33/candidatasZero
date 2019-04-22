@@ -11,9 +11,7 @@
                                 <li>
                                     <a href="#">Find offers</a>
                                 </li>
-                                <li>
-                                    <a href="#">Discover Projects</a>
-                                </li>
+                                
                                 <li>
                                     <a href="#">Our Portfolio</a>
                                 </li>
