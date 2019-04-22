@@ -45,6 +45,18 @@
         
         }
 
+        function delete($candidataID) {
+          $sql = "DELETE FROM candidatas WHERE CandidataID = {$candidataID}";
+          $delete = $this->db->query($sql);
+          $result = false;
+            if($delete) {
+                $result = true;
+
+            }
+            return $result;  
+
+        }
+
      
     }
 ?>
