@@ -6,7 +6,7 @@
                 unset($_SESSION[$name]);
 
             }
-            return $name;
+            // return $name;
         }
 
         public static function showCarreras() {

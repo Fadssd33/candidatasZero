@@ -29,7 +29,7 @@
                
                else {
                    $_SESSION['error_login'] = 'Identificacion fallida';
-                   $contraCorrecta = false;
+                   
                    header("location:". base_url . "alumno/index");
                    
                }
