@@ -88,6 +88,13 @@
 
               header('Location:' . base_url . 'candidata/agregarCandidata');
             }
+
+            public function eliminarcandidata() {
+              Utils::isAdmin();
+              $candidata = new Candidata();
+               $candidatas = $candidata->getCandidatas();
+              require_once 'views/eliminarCandidata.php';
+            }
     
         
         

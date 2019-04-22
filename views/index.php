@@ -71,7 +71,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                <a href="#">
+                <a href="<?=base_url?>candidata/eliminarCandidata">
                     <div class="info-icon">
                         <div class="icon text-danger">
                         
@@ -97,6 +97,7 @@
         </div>
     </div>
 <?php endif;?>
+<!-- Fin opciones administrador -->
 
     <div class="section section-our-team-freebie" id="candidatas">
         <div class="parallax filter filter-color-black">
