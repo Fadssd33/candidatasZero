@@ -38,6 +38,13 @@
 
         }
 
+        function getById($candidataID) {
+            $sql = 'SELECT * FROM candidatas WHERE CandidataID = ' . $candidataID . ";";
+            $candidata = $this->db->query($sql);
+            return $candidata;
+        
+        }
+
      
     }
 ?>

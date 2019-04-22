@@ -127,13 +127,23 @@
                                                     <h3 class="title"><?=$can->Nombre;?></h3>
                                                     <p class="small-text"><?=$can->NombreCarrera;?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
-                                                    <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill">Mas informacion</a>
+                                                    <!-- Verifica si el usuario a iniciado sesion -->
+                                                    <?php if(isset($_SESSION['identity'])):?>
+                                                       
+                                                        <input type="submit" value="Votar" name="<?=$can->CandidataID?>" class="btn btn-danger btn-fill">
+                                                      
+                                                        
+
+                                                    <!-- Si no ha iniciado session desactiva el boton -->
+                                                    <?php elseif(!isset($_SESSION['identity'])):?>
+                                                    <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill" disabled>Votar</a>
+                                                    <?php endif;?>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                            <?php endwhile;?>
+                                <?php endwhile;?>
                                     
                                         <!-- Fin carta -->
                                 </div>
@@ -236,5 +246,5 @@
 
 <?php
     //footer
-    require_once 'views/layout/footer.php'
+    require_once 'views/layout/footer.php';
 ?>

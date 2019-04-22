@@ -1,5 +1,6 @@
 <?php
     require_once 'models/alumnos.php';
+    require_once 'models/candidatas.php';
     class AlumnoController {
         
         public function __construct(){}
@@ -53,7 +54,7 @@
 
         public function saveVote() {
             if (isset($_POST)) {
-                $alumno = new Alumno();
+               $alumno = new Alumno();
                $save =  $alumno->saveVote($_POST['CURP']);
                 //agregar el id de candidata
                 if($save) {
@@ -65,5 +66,16 @@
                 
             }
         }
+
+        // public function confirmarVoto() {
+        //     $candidata = new Candidata();
+        //     $candidataData = $candidata->getById($_POST['']);
+        //     require_once 'views/confirmarVoto.php';
+            
+
+
+            
+            
+        // }
     }
 ?>
