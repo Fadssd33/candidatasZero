@@ -162,8 +162,8 @@
     <div class="section section-our-clients-freebie">
         <div class="container">
             <div class="title-area">
-                <h5 class="subtitle text-gray">Estas son las</h5>
-                <h2>Jueces</h2>
+                <h5 class="subtitle text-gray">Mira aqui el...</h5>
+                <h2>TOP RANKING</h2>
                 <div class="separator separator-danger">∎</div>
             </div>
 
@@ -195,7 +195,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="testimonial1">
                     <p class="description">
-                        And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color... Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all!
+                        El top ranking representa a las tres candidatas con el porsentaje mas alto hasta el momento, basandonos en la mayoria de votos obtenido por los estudiantes que apoyan a sus compañeras que se encuentran como candidatas a ser reina, si tu candidata favorita no se encuentra en este top no te preocupes ya que aun puede aparecer y darle la vuelta a este juego con el appoyo de los votantes que aun faltan por participar.
                     </p>
                 </div>
                 <div class="tab-pane" id="testimonial2">
