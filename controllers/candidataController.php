@@ -111,6 +111,14 @@
 
                 header('Location:' . base_url . 'candidata/eliminarcandidata');
             }
+
+            public function modificarCandidata() {
+              Utils::isAdmin();
+              $candidata = new Candidata();
+              $candidatas = $candidata->getCandidatas();
+              require_once 'views/modificarCandidata.php';
+              
+            }
     
         
         
