@@ -10,15 +10,15 @@
                     <span class="icon-bar bar2"></span>
                     <span class="icon-bar bar3"></span>
                 </button>
-                <a href="http://www.creative-tim.com" class="navbar-brand">
-                    UES - Candidatas
+                <a href="http://www.creative-tim.com" class="navbar-brand"><i class="fa fa-graduation-cap" aria-hidden="true"></i> 
+                    UES - Candidatas  
                 </a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
                     <li>
                   
-                        <a  href=" https://www.ues.mx" target="_blank"> ues_mx</a>
+                        <a  href=" https://www.ues.mx" target="_blank"><i class="fa fa-university" aria-hidden="true"></i> ues_mx</a>
                     </li>
                     <li class="dropdown">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
@@ -38,9 +38,9 @@
                     </li>
                     <li>
                         <?php if(!isset($_SESSION['identity'])):?>
-                            <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill">Iniciar Sesion</a>
+                            <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill"> Iniciar Sesion <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                             <?php else:?>
-                            <a href="<?=base_url?>alumno/logout" class="btn btn-danger btn-fill">Cerrar Sesion</a> 
+                            <a href="<?=base_url?>alumno/logout" class="btn btn-danger btn-fill">Cerrar Sesion <i class="fa fa-sign-out" aria-hidden="true"></i></a> 
                         <?php endif; ?>
                     </li>
                 </ul>
