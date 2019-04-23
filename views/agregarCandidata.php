@@ -5,6 +5,10 @@
     require_once 'views/layout/navbar.php';
     require_once 'helpers/utils.php';
 ?>
+
+    
+           
+
     <!-- Contenido -->
     <div class="section section-our-clients-freebie">
         <div class="container">
@@ -25,7 +29,6 @@
                 <?php endif;?>
                 <?= Utils::deleteSession('candidataGuardada');?>
                 
-
             </div>
 
             
@@ -35,13 +38,21 @@
                 <div class="tab-pane active" id="testimonial1">
 
                 <form action="<?=base_url?>candidata/guardarCandidata" method="POST" enctype="multipart/form-data">
-                    <label for="nombre">Nombre:     </label> <input type="text" name="nombre"/><br>
-                    <label for="apellidoMaterno">Apellido Materno:     </label> <input type="text" name="apellidoMaterno"/>
-                    <label for="apellidoPaterno">Apellido Paterno:     </label> <input type="text" name="apellidoPaterno"/><br>
-                    <label for="correo">Correo:     </label> <input type="email" name="correo"/><br>
+                    <br>
+
+                    <label for="nombre">Nombre:                         </label> <input type="text" class="form-control" name="nombre" />  
+                    <br>
+                    <label for="apellidoMaterno">Apellido Materno:     </label>  <input type="text" class="form-control" name="apellidoMaterno"/>
+                    <br>
+                    <label for="apellidoPaterno">Apellido Paterno:     </label> <input type="text" class="form-control" name="apellidoPaterno"/>
+                    <br>
+
+                    
+                    <label for="correo">Correo:     </label> <input type="text"  class="form-control"  placeholder="email@example.com">
+                    <br>
                     <label for="carrera">carrera:</label>   
                     <?php $carreras = Utils::showCarreras();?>  
-                    <select name="carrera">
+                    <select  class="form-control form-control-lg" name="carrera">
                         <?php while($carrera = $carreras->fetch_object()): ?>
                                 <option value="<?=$carrera->CarreraID?>"> 
                                     <?=$carrera->NombreCarrera?>
@@ -51,17 +62,33 @@
                     </select><br>
                     <label for="sexo">Sexo</label> 
                     <!-- Sexo femenino -->
-                    <input type="radio" id="sexo" name="sexo" value="1">
-                    <label for="femenino">Femenino</label>
+                    <!--  <input type="radio" id="sexo" name="sexo" value="1"> -->
+                    <!--  <label for="femenino">Femenino</label>-->
                     <!-- Sexo masculino -->
-                    <input type="radio" id="sexo" name="sexo" value="2">
-                    <label for="masculino">Masculino</label><br>
+                    <!--  <input type="radio" id="sexo" name="sexo" value="2">-->
+                   <!--   <label for="masculino">Masculino</label><br>-->
+                   <!--   <div class="form-row align-items-center">-->
 
+            
+              <label class="mr-sm-2 sr-only" for="sexo">Preference</label>
+                 <select class="custom-select" id="sexo" required>
+                 <option selected>Sexo...</option>
+                  <option id="sexo" value="1">Femenino</option>
+                  <option id="sexo" value="2">Masculino</option>
+                  <option id="sexo" value="3">indistinto</option>
+                  </select>
+                 </div>
+             
                     <!-- Edad -->
                     <label for="edad">Edad: </label>
                     <input type="number" name="edad" id="edad">
-                    <label for="descripcion">Descripcion: </label><br>
-                    <textarea name="descripcion" id="" cols="30" rows="10" maxlength="300"></textarea>
+
+                    
+                    <br>
+                    <label for="descripcion">Descripcion: </label>
+                    <br>
+                    <textarea class="form-control" name="descripcion" id="" cols="30" rows="10" maxlength="300"></textarea>
+                    <br>
                       <p class="description">
                        Maximo 300 caracteres
                     </p> <br>
@@ -69,13 +96,13 @@
                     <!-- Subir imagen -->
 
                     <label for="imagen">Imagen: </label>
-                    <input type="file" name="imagen">
+                    <input type="file" class="form-control-file" name="imagen">
+                    <br>
                     <input type="submit" value="Guardar" class="btn btn-danger btn-fill"/>
                 </form>
                     
                 </div>
                 
-
             </div>
 
         </div>

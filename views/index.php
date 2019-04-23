@@ -5,7 +5,7 @@
     require_once 'views/layout/navbar.php';
 ?>
 <!-- contenido -->
-
+<link rel="ICON" href="assets/img/UESlogos.ico">
 <!-- assets/img/header-1.jpeg -->
 <div class="section section-header">
         <div class="parallax filter filter-color-red">
