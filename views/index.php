@@ -195,7 +195,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="testimonial1">
                     <p class="description">
-                        El top ranking representa a las tres candidatas con el porsentaje mas alto hasta el momento, basandonos en la mayoria de votos obtenido por los estudiantes que apoyan a sus compañeras que se encuentran como candidatas a ser reina, si tu candidata favorita no se encuentra en este top no te preocupes ya que aun puede aparecer y darle la vuelta a este juego con el appoyo de los votantes que aun faltan por participar.
+                        El top ranking representa a las tres candidatas con el porcentaje mas alto hasta el momento, basandonos en la mayoria de votos obtenido por los estudiantes que apoyan a sus compañeras que se encuentran como candidatas a ser reina, si tu candidata favorita no se encuentra en este top no te preocupes ya que aun puede aparecer y darle la vuelta a este juego con el appoyo de los votantes que aun faltan por participar.
                     </p>
                 </div>
                 <div class="tab-pane" id="testimonial2">

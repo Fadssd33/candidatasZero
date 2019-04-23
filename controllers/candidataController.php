@@ -119,6 +119,21 @@
               require_once 'views/modificarCandidata.php';
               
             }
+
+            public function modificarCandidata2() {
+              Utils::isAdmin();
+              $candidata = new Candidata();
+              
+              $candidataUpdate= $candidata->update($_POST['candidataID'], $_POST['nombre'], $_POST['apellidoMaterno'], $_POST['apellidoPaterno'], $_POST['correo'], $_POST['carreraID'], $_POST['edad'], $_POST['descripcion']);
+              if($candidataUpdate) {
+                $_SESSION['candidataModificada'] = 'complete';
+
+              }
+              else {
+                $_SESSION['candidataModificada'] = 'failed';
+              }
+              header('Location:' . base_url . 'candidata/modificarCandidata');
+            }
     
         
         

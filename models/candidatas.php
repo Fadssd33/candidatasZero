@@ -11,7 +11,7 @@
         }
 
         function getCandidatas() {
-            $candidatas = $this->db->query("SELECT CandidataID, Nombre, ApellidoMaterno, ApellidoPaterno, Correo, Sexo, Edad, numVotos, imagen, descripcion, NombreCarrera  FROM candidatas INNER JOIN carreras ON carreras.CarreraID =  candidatas.CarreraID");
+            $candidatas = $this->db->query("SELECT CandidataID, Nombre, ApellidoMaterno, ApellidoPaterno, Correo, candidatas.CarreraID, Sexo, Edad, numVotos, imagen, descripcion, NombreCarrera  FROM candidatas INNER JOIN carreras ON carreras.CarreraID =  candidatas.CarreraID");
             return $candidatas;
 
         }
@@ -46,7 +46,6 @@
         }
 
         function delete($candidataID) {
-            //comentario de prueba
           $sql = "DELETE FROM candidatas WHERE CandidataID = {$candidataID}";
           $delete = $this->db->query($sql);
           $result = false;
@@ -55,6 +54,18 @@
 
             }
             return $result;  
+
+        }
+
+        function update($candidataID,$Nombre,$ApellidoMaterno, $ApellidoPaterno, $Correo, $CarreraID, $Edad, $descripcion) {
+        $sql= "UPDATE candidatas SET Nombre = '{$Nombre}', ApellidoMaterno = '{$ApellidoMaterno}', ApellidoPaterno = '{$ApellidoPaterno}', Correo = '{$Correo}', CarreraID = {$CarreraID}, Edad = {$Edad}, descripcion = '{$descripcion}' WHERE CandidataID = {$candidataID}";
+        $update = $this->db->query($sql);
+        $result = false;
+        if($update) {
+            $result = true;
+
+        }
+        return $result;
 
         }
 

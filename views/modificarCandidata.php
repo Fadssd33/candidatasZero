@@ -7,22 +7,22 @@
     <div class="section section-our-clients-freebie">
         <div class="container">
             <div class="title-area">
-                <h5 class="subtitle text-gray">Eliminar</h5>
+                <h5 class="subtitle text-gray">Modificar</h5>
                 <h2>Candidatas</h2>
                 <div class="separator separator-danger">∎</div>
-                <?php if(isset($_SESSION['candidataEliminada']) && $_SESSION['candidataEliminada'] == "complete"):?>
+                <?php if(isset($_SESSION['candidataModificada']) && $_SESSION['candidataModificada'] == "complete"):?>
                 <!-- Cambiar esto a verde -->
                      <p class="description">
-                       Candidata eliminada correctamente.
+                       Candidata modificada correctamente.
                     </p> <br>
-                <?php elseif(isset($_SESSION['candidataEliminada']) && $_SESSION['candidataEliminada'] != "complete"):?>
+                <?php elseif(isset($_SESSION['candidataModificada']) && $_SESSION['candidataModificada'] != "complete"):?>
                     <!-- Cambiar esto a rojo -->
                     
                     <p class="description">
-                        ERROR: La candidata no se ha eliminado.
+                        ERROR: La candidata no ha podido ser modificada.
                     </p> <br>
                 <?php endif;?>
-                <?= Utils::deleteSession('candidataEliminada');?>
+                <?= Utils::deleteSession('candidataModificada');?>
             </div>
            
             
@@ -40,15 +40,43 @@
                                                     <img alt="..." class="img-circle" src="<?=base_url?>uploads/images/<?=$can->imagen?>"/>
                                                 </div>
                                                 <div class="description">
-                                                    <h3 class="title"><?=$can->Nombre;?></h3>
-                                                    <!-- Mostrar la carrera -->
-                                                    <p class="small-text"><?=$can->NombreCarrera;?></p>
-                                                    <p class="description"><?=$can->descripcion?></p>
-                                                    <form action="<?=base_url?>candidata/eliminarCandidata2" method="POST">
+                                                <form action="<?=base_url?>candidata/modificarCandidata2" method="POST">
+                                                    <input class="title" type="text" name="nombre" id="" value="<?=$can->Nombre?>">
+                                                    <input class="title" type="text" name="apellidoMaterno" id="" value="<?=$can->ApellidoMaterno?>">
+                                                    <input class="title" type="text" name="apellidoPaterno" id="" value="<?=$can->ApellidoPaterno?>">
+                                                    <input class="title" type="text" name="correo" id="" value="<?=$can->Correo?>">
+                                                     <!-- Mostrar la carrera -->
+                                                    
+                                                    <?php $carreras = Utils::showCarreras();?>  
+                                                    <select class="small-text"name="carreraID">
+                                                    <option value="<?=$can->CarreraID?>" selected> 
+                                                                    <?=$can->NombreCarrera?>
+                                                                    
+                                                                </option>
+                                                        <?php while($carrera = $carreras->fetch_object()): ?>
+                                                                <option value="<?=$carrera->CarreraID?>"> 
+                                                                    <?=$carrera->NombreCarrera?>
+                                                                    
+                                                                </option>
+                                                                
+                                                                
+                                                        
+                                                        <?php endwhile;?>
+                                                                
+                                                        
+                                                    </select><br>
+                                                    
+                                                    <input type="number" name="edad" id="edad" value="<?=$can->Edad?>">
+
+                                                   
+                                                    <textarea name="descripcion" id="" cols="20" rows="10" maxlength="300" ><?=$can->descripcion?></textarea>
+
+
+                                                    
                                                         <!-- pasa el id de la candidata -->
                                                         <input type="text" value="<?=$can->CandidataID?>" name="candidataID" style="display:none;">
                                                         
-                                                        <input type="submit" value="Modificar" name="candidata" class="btn btn-black btn-fill">
+                                                        <input type="submit" value="Guardar Cambios" name="candidata" class="btn btn-black btn-fill">
                                                     </form>
                                                     
 
