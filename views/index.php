@@ -120,11 +120,15 @@
                             <div class="separator separator-danger">✻</div>
                               
                             <!-- Si el usuario ya voto -->
-                            <?php if($_SESSION['identity']->voto == 1):?>
+                            <?php if(isset($_SESSION['identity']) && $_SESSION['identity']->voto == 1):?>
                                 <p class="description">Ya has votado por una candidata, pero aun asi puedes zorrear!</p>
                             <!-- si el usuarion no ha votado -->
-                            <?php elseif($_SESSION['identity']->voto == 0):?>
+                            <?php elseif(isset($_SESSION['identity']) && $_SESSION['identity']->voto == 0):?>
                                  <p class="description">En el siguiente apartado se enciuentras las mas sabrosas de la escuela  ahi para que waches la que mas te gusta carnal .</p>
+                            <?php else :?>
+                                 <p class="description">En el siguiente apartado se enciuentras las mas sabrosas de la escuela  ahi para que waches la que mas te gusta carnal .</p>
+
+                            
                             <?php endif; ?>
                             
                         </div>
@@ -147,7 +151,7 @@
                                                     <p class="description"><?=$can->descripcion?></p>
                                                     <!-- Verifica si el usuario a iniciado sesion -->
 
-                                                    <?php if(isset($_SESSION['identity']) || $_SESSION['identity']->voto == 0):?>
+                                                    <?php if(isset($_SESSION['identity']) && $_SESSION['identity']->voto == 0):?>
                                                         <form action="<?=base_url?>alumno/saveVote" method="POST">
                                                        <!-- form que manda el id de la candidata y id del alumno -->
                                                         <input type="hidden" name="candidataID" value="<?=$can->CandidataID?>">
@@ -180,53 +184,38 @@
             <div class="title-area">
                 <h5 class="subtitle text-gray">Mira aqui el...</h5>
                 <h2>TOP RANKING</h2>
+               <p> El top ranking representa a las tres candidatas con el porcentaje mas alto hasta el momento, basandonos en la mayoria de votos obtenido por los estudiantes que apoyan a sus compañeras que se encuentran como candidatas a ser reina, si tu candidata favorita no se encuentra en este top no te preocupes ya que aun puede aparecer y darle la vuelta a este juego con el appoyo de los votantes que aun faltan por participar.</p>
                 <div class="separator separator-danger">∎</div>
             </div>
-
+<?php while($topCan = $topCandidatas->fetch_object()):?>
             <ul class="nav nav-text" role="tablist">
                 <li class="active">
-                    <a href="#testimonial1" role="tab" data-toggle="tab">
+                    <a href="#testimonial<?$topCan->CandidataID?>" role="tab" data-toggle="tab">
+                    
                         <div class="image-clients">
-                            <img alt="..." class="img-circle" src="<?=base_url?>assets\img\rupaul-400x400.jpg"/>
+                            <img alt="..." class="img-circle" src="<?=base_url?>uploads/images/<?=$topCan->imagen?>"/>
+                            
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#testimonial2" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="<?=base_url?>assets\img\michellevisage.jpg"/>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#testimonial3" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="<?=base_url?>assets/img/faces/face_2.jpg"/>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+<?php endwhile;?>
+               
 
-
-            <div class="tab-content">
-                <div class="tab-pane active" id="testimonial1">
+<?php while($topCanDescription = $topCandidatas->fetch_object()):?> 
+             <div class="tab-content">
+                <div class="tab-pane active" id="testimonial<?$topCan->CandidataID?>">
                     <p class="description">
-                        El top ranking representa a las tres candidatas con el porcentaje mas alto hasta el momento, basandonos en la mayoria de votos obtenido por los estudiantes que apoyan a sus compañeras que se encuentran como candidatas a ser reina, si tu candidata favorita no se encuentra en este top no te preocupes ya que aun puede aparecer y darle la vuelta a este juego con el appoyo de los votantes que aun faltan por participar.
+                       descripcion
                     </p>
                 </div>
-                <div class="tab-pane" id="testimonial2">
-                    <p class="description">Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all! And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color...
-                    </p>
-                </div>
-                <div class="tab-pane" id="testimonial3">
-                    <p class="description"> I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. The 'Gaia' team did a great work while we were collaborating. They provided a vision that was in deep connection with our needs and helped us achieve our goals.
-                    </p>
-                </div>
+                
 
-            </div>
+            
+                </div>    
+       
+<?php endwhile; ?>
 
-        </div>
-    </div>
+</div>
 
 
     <div class="section section-small section-get-started">

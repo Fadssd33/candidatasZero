@@ -7,6 +7,7 @@
             public function index() {
               $candidata = new Candidata();
               $candidatas = $candidata->getFirstThree();
+              $topCandidatas = $candidata->getTopVotes();
                 require_once 'views/index.php';
 
             }

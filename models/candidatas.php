@@ -100,6 +100,14 @@
             return $votes;
        }
 
+       function getTopVotes() 
+       {
+           $sql = "SELECT * FROM candidatas ORDER BY numVotos LIMIT 3";
+           $topCandidatas = $this->db->query($sql);
+           return $topCandidatas;
+
+       }
+
 
      
     }

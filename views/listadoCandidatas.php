@@ -39,6 +39,16 @@
                                                     <!-- Mostrar la carrera -->
                                                     <p class="small-text"><?=$can->NombreCarrera;?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
+                                                    <?php if(isset($_SESSION['identity']) && $_SESSION['identity']->voto == 0):?>
+                                                        <form action="<?=base_url?>alumno/saveVote" method="POST">
+                                                       <!-- form que manda el id de la candidata y id del alumno -->
+                                                        <input type="hidden" name="candidataID" value="<?=$can->CandidataID?>">
+                                                        <input type="submit" value="Votar" name="<?=$can->CandidataID?>" class="btn btn-danger btn-fill">
+                                                        </form>
+                                                    <!-- Si no ha iniciado session desactiva el boton -->
+                                                    <?php elseif(!isset($_SESSION['identity']) || $_SESSION['identity']->voto == 1):?>
+                                                        <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill" disabled>Votar</a>
+                                                    <?php endif;?>
                                                 </div>
                                             </div>
                                         </div>
