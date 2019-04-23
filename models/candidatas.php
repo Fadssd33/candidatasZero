@@ -68,6 +68,38 @@
         return $result;
 
         }
+       
+        function registerVote($candidataID) {
+            
+            $result = false;
+            $currentVotes = $this->getVotes($candidataID);
+            // Consigue el numero de votos actuales
+            $currentVotes = $currentVotes->fetch_object();
+           
+            //Suma un voto
+            $numVotos = $currentVotes->numVotos + 1;
+            // $votoActual = $numVotos[0];
+           
+            
+            //Agrega el voto
+            $sql = "UPDATE candidatas SET numVotos = {$numVotos} WHERE CandidataID = {$candidataID}";
+            $registerVote = $this->db->query($sql);
+            if($registerVote) {
+                $result = true;
+
+            }
+            return $result;
+
+        }
+
+        function getVotes($candidataID) {
+            $sql = "SELECT numVotos FROM candidatas WHERE CandidataID = {$candidataID}";
+            
+            $votes = $this->db->query($sql);
+            
+            return $votes;
+       }
+
 
      
     }

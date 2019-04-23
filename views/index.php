@@ -16,6 +16,15 @@
             <div class="container">
                 <div class="content">
                     <div class="title-area">
+                    <!-- Si se mando el voto -->
+                        <?php if(isset($_SESSION['votoCompletado']) && $_SESSION['votoCompletado'] == "complete"):?>
+                            <p>Voto agregado correctamente</p>
+                        <?php elseif(isset($_SESSION['votoCompletado']) && $_SESSION['votoCompletado'] !="complete"):?>
+                            <p>Tu voto no pudo ser registrado, intentalo nuevamente</p>
+                        <?php endif; ?>
+                        <!-- borra sesion votoCompletado -->
+                        <?= Utils::deleteSession('votoCompletado');?>
+
                         <p>Evento anual estudiantil de las...</p>
                         <h1 class="title-modern">Candidatas UES</h1>
                         <?php if(!isset($_SESSION['identity'])):?>
@@ -109,7 +118,15 @@
                         <div class="title-area">
                             <h2>Candidatas</h2>
                             <div class="separator separator-danger">✻</div>
-                            <p class="description">En el siguiente apartado se enciuentras las mas sabrosas de la escuela  ahi para que waches la que mas te gusta carnal .</p>
+                              
+                            <!-- Si el usuario ya voto -->
+                            <?php if($_SESSION['identity']->voto == 1):?>
+                                <p class="description">Ya has votado por una candidata, pero aun asi puedes zorrear!</p>
+                            <!-- si el usuarion no ha votado -->
+                            <?php elseif($_SESSION['identity']->voto == 0):?>
+                                 <p class="description">En el siguiente apartado se enciuentras las mas sabrosas de la escuela  ahi para que waches la que mas te gusta carnal .</p>
+                            <?php endif; ?>
+                            
                         </div>
                     </div>
 
@@ -129,17 +146,16 @@
                                                     <p class="small-text"><?=$can->NombreCarrera;?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
                                                     <!-- Verifica si el usuario a iniciado sesion -->
-                                                    <?php if(isset($_SESSION['identity'])):?>
-                                                       
+
+                                                    <?php if(isset($_SESSION['identity']) || $_SESSION['identity']->voto == 0):?>
+                                                        <form action="<?=base_url?>alumno/saveVote" method="POST">
+                                                       <!-- form que manda el id de la candidata y id del alumno -->
+                                                        <input type="hidden" name="candidataID" value="<?=$can->CandidataID?>">
                                                         <input type="submit" value="Votar" name="<?=$can->CandidataID?>" class="btn btn-danger btn-fill">
-                                                      
-                                                      <!-- Button trigger modal -->
-
-                                                           
-
+                                                        </form>
                                                     <!-- Si no ha iniciado session desactiva el boton -->
-                                                    <?php elseif(!isset($_SESSION['identity'])):?>
-                                                    <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill" disabled>Votar</a>
+                                                    <?php elseif(!isset($_SESSION['identity']) || $_SESSION['identity']->voto == 1):?>
+                                                        <a href="<?=base_url?>alumno/index" class="btn btn-danger btn-fill" disabled>Votar</a>
                                                     <?php endif;?>
 
                                                 </div>

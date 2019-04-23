@@ -52,11 +52,12 @@ require_once 'config/db.php';
         }
 //Pasar tambien id de candidata
         public function saveVote($CURP) {
-            $result = false;
-            $sql = "UPDATE alumnos SET voto = 1 WHERE CURP = " . $CURP. ";";
+            
+            $sql = "UPDATE alumnos SET voto = 1 WHERE CURP = '{$CURP}';";
+           
             $vote = $this->db->query($sql);
-
-            if($save) {
+            $result = false;
+            if($vote) {
                 $result = true;
             } return $result;
     

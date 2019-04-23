@@ -54,17 +54,25 @@
 
         public function saveVote() {
             if (isset($_POST)) {
+                
                $alumno = new Alumno();
-               $save =  $alumno->saveVote($_POST['CURP']);
+               $saveAlumnoVote =  $alumno->saveVote($_SESSION['identity']->CURP);
+               
+               $candidata = new Candidata();
+               $saveCandidataVote = $candidata->registerVote($_POST['candidataID']);
+               
                 //agregar el id de candidata
-                if($save) {
-                    //Poner una pantalla o modal de voto echo correctamente
+                if($saveAlumnoVote && $saveCandidataVote) {
+                    $_SESSION['votoCompletado'] = 'complete';
                 }
                 else {
                     //Poner errror base de datos
+                    $_SESSION['votoCompletado'] = 'failed';
+
                 }
                 
             }
+            header('location:' . base_url . "candidata/index");
         }
 
         // public function confirmarVoto() {
