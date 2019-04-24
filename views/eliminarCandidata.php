@@ -44,7 +44,8 @@
                                                 <div class="description">
                                                     <h3 class="title"><?=$can->Nombre;?></h3>
                                                     <!-- Mostrar la carrera -->
-                                                    <p class="small-text"><?=$can->NombreCarrera;?></p>
+                                                    
+                                                    <p class="small-text"><?= Utils::formatText($can->NombreCarrera);?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
                                                     <form action="<?=base_url?>candidata/eliminarCandidata2" method="POST">
                                                         <!-- pasa el id de la candidata -->
