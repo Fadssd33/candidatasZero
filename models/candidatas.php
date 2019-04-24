@@ -28,6 +28,7 @@
             $save = $this->db->query($sql);
             // $this->db-error;
             // die();
+            
 
             $result = false;
             if($save) {
@@ -57,8 +58,8 @@
 
         }
 
-        function update($candidataID,$Nombre,$ApellidoMaterno, $ApellidoPaterno, $Correo, $CarreraID, $Edad, $descripcion) {
-        $sql= "UPDATE candidatas SET Nombre = '{$Nombre}', ApellidoMaterno = '{$ApellidoMaterno}', ApellidoPaterno = '{$ApellidoPaterno}', Correo = '{$Correo}', CarreraID = {$CarreraID}, Edad = {$Edad}, descripcion = '{$descripcion}' WHERE CandidataID = {$candidataID}";
+        function update($candidataID,$Nombre,$ApellidoMaterno, $ApellidoPaterno, $Correo, $CarreraID, $Edad, $imagen, $descripcion) {
+        $sql= "UPDATE candidatas SET Nombre = '{$Nombre}', ApellidoMaterno = '{$ApellidoMaterno}', ApellidoPaterno = '{$ApellidoPaterno}', Correo = '{$Correo}', CarreraID = {$CarreraID}, Edad = {$Edad}, imagen = '{$imagen}',descripcion = '{$descripcion}' WHERE CandidataID = {$candidataID}";
         $update = $this->db->query($sql);
         $result = false;
         if($update) {

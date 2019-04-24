@@ -40,7 +40,8 @@
                                                     <img alt="..." class="img-circle" src="<?=base_url?>uploads/images/<?=$can->imagen?>"/>
                                                 </div>
                                                 <div class="description">
-                                                <form action="<?=base_url?>candidata/modificarCandidata2" method="POST">
+                                                <form action="<?=base_url?>candidata/modificarCandidata2" method="POST" enctype="multipart/form-data">
+                                                    <input type="file" class="form-control-file" value="<?=base_url?>uploads/images/<?=$can->imagen?>" name="imagen">
                                                     <input class="title" type="text" name="nombre" id="" value="<?=$can->Nombre?>">
                                                     <input class="title" type="text" name="apellidoMaterno" id="" value="<?=$can->ApellidoMaterno?>">
                                                     <input class="title" type="text" name="apellidoPaterno" id="" value="<?=$can->ApellidoPaterno?>">

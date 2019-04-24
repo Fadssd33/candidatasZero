@@ -48,7 +48,7 @@
                     <br>
 
                     
-                    <label for="correo">Correo:     </label> <input type="text"  class="form-control"  placeholder="email@example.com">
+                    <label for="correo">Correo:     </label> <input type="text" name="correo" class="form-control"  placeholder="email@example.com">
                     <br>
                     <label for="carrera">carrera:</label>   
                     <?php $carreras = Utils::showCarreras();?>  
@@ -60,22 +60,22 @@
                         
                         <?php endwhile;?>
                     </select><br>
-                    <label for="sexo">Sexo</label> 
-                    <!-- Sexo femenino -->
-                    <!--  <input type="radio" id="sexo" name="sexo" value="1"> -->
-                    <!--  <label for="femenino">Femenino</label>-->
+                    
+                    <!-- <label for="sexo">Sexo</label>  -->
+                     <!-- Sexo femenino -->
+                    <!-- <input type="radio" id="sexo" name="sexo" value="1">
+                     <label for="femenino">Femenino</label> -->
                     <!-- Sexo masculino -->
-                    <!--  <input type="radio" id="sexo" name="sexo" value="2">-->
-                   <!--   <label for="masculino">Masculino</label><br>-->
-                   <!--   <div class="form-row align-items-center">-->
+                    <!-- <input type="radio" id="sexo" name="sexo" value="2">
+                      <label for="masculino">Masculino</label><br>
+                     <div class="form-row align-items-center"> -->
 
             
               <label class="mr-sm-2 sr-only" for="sexo">Preference</label>
-                 <select class="custom-select" id="sexo" required>
+                 <select class="custom-select" id="sexo" name ="sexo" required>
                  <option selected>Sexo...</option>
-                  <option id="sexo" value="1">Femenino</option>
+                  <option id="sexo" value="1" >Femenino</option>
                   <option id="sexo" value="2">Masculino</option>
-                  <option id="sexo" value="3">indistinto</option>
                   </select>
                  </div>
              

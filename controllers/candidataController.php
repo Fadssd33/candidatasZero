@@ -29,6 +29,8 @@
 
             public function guardarCandidata() {
               Utils::isAdmin();
+              
+
               if(isset($_POST)) {
                 $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
                 $apellidoMaterno = isset($_POST['apellidoMaterno']) ? $_POST['apellidoMaterno'] : false;
@@ -39,6 +41,9 @@
                 $edad = isset($_POST['edad']) ? $_POST['edad'] : false;
                 $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
                 $imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
+
+              
+                
 
                 if($nombre && $apellidoMaterno && $apellidoPaterno && $correo && $carrera && $sexo && $edad && $descripcion) {
                     $candidataGuardar = new Candidata();
@@ -68,6 +73,8 @@
                    }
 
                    $guardar = $candidataGuardar->guardar();
+                   
+                   
                    if($guardar) {
                      $_SESSION['candidataGuardada'] = "complete";
 
@@ -124,8 +131,23 @@
             public function modificarCandidata2() {
               Utils::isAdmin();
               $candidata = new Candidata();
+             
+                   $file = $_FILES['imagen'];
+                   $fileName = $file['name'];
+                   $mimetype = $file['type'];
+
+                   if($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/gif") {
+                      if(!is_dir('uploads/images')) {
+                        mkdir('uploads/images', 0777, true);
+                      }
+                      $_POST['imagen'] = $fileName;
+                      
+                      
+                      move_uploaded_file($file['tmp_name'], 'uploads/images/' . $fileName);
+                      
+                   }
               
-              $candidataUpdate= $candidata->update($_POST['candidataID'], $_POST['nombre'], $_POST['apellidoMaterno'], $_POST['apellidoPaterno'], $_POST['correo'], $_POST['carreraID'], $_POST['edad'], $_POST['descripcion']);
+              $candidataUpdate= $candidata->update($_POST['candidataID'], $_POST['nombre'], $_POST['apellidoMaterno'], $_POST['apellidoPaterno'], $_POST['correo'], $_POST['carreraID'], $_POST['edad'],$_POST['imagen'], $_POST['descripcion']);
               if($candidataUpdate) {
                 $_SESSION['candidataModificada'] = 'complete';
 
