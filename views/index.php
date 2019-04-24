@@ -147,8 +147,10 @@
                                                 </div>
                                                 <div class="description">
                                                     <h3 class="title"><?=$can->Nombre;?></h3>
-                                                    <p class="small-text"><?=$can->NombreCarrera;?></p>
+                                                    <p class="small-text"><?= Utils::formatText($can->NombreCarrera)?></p>
                                                     <p class="description"><?=$can->descripcion?></p>
+                                                    
+                                                   
                                                     <!-- Verifica si el usuario a iniciado sesion -->
 
                                                     <?php if(isset($_SESSION['identity']) && $_SESSION['identity']->voto == 0):?>
