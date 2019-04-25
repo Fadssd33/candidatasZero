@@ -24,7 +24,7 @@
                 <?php elseif(isset($_SESSION['candidataGuardada']) && $_SESSION['candidataGuardada'] != "complete"):?>
                     <!-- Cambiar esto a rojo -->
                     
-                    <p class="description">
+                    <p class="description" class="text-danger">
                         ERROR: La candidata no se ha agregado.
                     </p> <br>
                 <?php endif;?>
