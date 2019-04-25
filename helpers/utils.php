@@ -17,6 +17,19 @@
             return $carreras; 
         }
 
+        public static function getDescripcionById($id) {
+            require_once 'models/candidatas.php';
+            $candidata = new Candidata();
+            $candidataById = $candidata->getById($id);
+            $descripcion;
+            while ($candidataDescripcion = $candidataById->fetch_object()):
+                $descripcion = "Sobre mi: {$candidataDescripcion->descripcion}";
+            endwhile;
+            return $descripcion; 
+
+        }
+
+        
         //verifica si se inicia sesion de administrador
         public static function isAdmin(){
             if(!isset($_SESSION['admin'])){

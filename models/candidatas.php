@@ -19,7 +19,7 @@
         function getFirstThree() {
             // $firstThree = $this->db->query("SELECT * FROM candidatas LIMIT 3");
             $firstThree = $this->db->query("SELECT CandidataID, Nombre, ApellidoMaterno, ApellidoPaterno, Correo, Sexo, Edad, numVotos, imagen, descripcion, NombreCarrera  FROM candidatas INNER JOIN carreras ON carreras.CarreraID =  candidatas.CarreraID LIMIT 3");
-
+            
             return $firstThree;
         }
 
@@ -40,8 +40,10 @@
         }
 
         function getById($candidataID) {
-            $sql = 'SELECT * FROM candidatas WHERE CandidataID = ' . $candidataID . ";";
+            $sql = "SELECT * FROM candidatas WHERE CandidataID =  {$candidataID}";
+           
             $candidata = $this->db->query($sql);
+            
             return $candidata;
         
         }
@@ -49,6 +51,7 @@
         function delete($candidataID) {
           $sql = "DELETE FROM candidatas WHERE CandidataID = {$candidataID}";
           $delete = $this->db->query($sql);
+         
           $result = false;
             if($delete) {
                 $result = true;

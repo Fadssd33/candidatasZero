@@ -206,9 +206,10 @@
         </div>
 
         <ul class="nav nav-text" role="tablist">
-            <?php $candidatasArray = array()?>
+            <?php $candidatasArray = array() ?>
             <input type="hidden" name="">
             <?php while($topCan = $topCandidatas->fetch_object()):?>
+           
             <?php array_push($candidatasArray, $topCan->CandidataID) ?>
             <li>
                 <a href="#testimonial<?=$topCan->CandidataID?>" role="tab" data-toggle="tab">
@@ -219,24 +220,36 @@
             </li>
 
             <?php endwhile; ?>
-            
-
         </ul>
+        <?php  
+                
+                $candidata0 = Utils::getDescripcionById($candidatasArray[0]);
+                $candidata1 = Utils::getDescripcionById($candidatasArray[1]);
+                $candidata2 = Utils::getDescripcionById($candidatasArray[2]);
+                ?>
+                
+                
+      
         <div class="tab-content">
             <div class="tab-pane active" id="testimonial<?=$candidatasArray[0]?>">
                 <p class="description">
-                    Hola
+
+                   
+                   <?= $candidata0?>
+
+                   
+                
                 </p>
             </div>
 
-            <div class="tab-pane active" id="testimonial<?=$candidatasArray[1]?>">
+            <div class="tab-pane" id="testimonial<?=$candidatasArray[1]?>">
                 <p class="description">
-                    Hola
+                <?= $candidata1?>
                 </p>
             </div>
-            <div class="tab-pane active" id="testimonial<?=$candidatasArray[2]?>">
+            <div class="tab-pane" id="testimonial<?=$candidatasArray[2]?>">
                 <p class="description">
-                    Puta
+                <?= $candidata2?>
                 </p>
             </div>
 
