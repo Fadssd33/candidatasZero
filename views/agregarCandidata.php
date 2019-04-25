@@ -41,7 +41,7 @@
                 <form action="<?=base_url?>candidata/guardarCandidata" method="POST" enctype="multipart/form-data">
                     <br>
 
-                    <h3 class="display-2" for="nombre">Nombre:                         </h3> <input type="text" class="form-control" name="nombre" />  
+                    <h3 class="display-2" for="nombre">Nombre:       </h3> <input type="text" class="form-control" name="nombre" />  
                     <br>
                     <h3 for="apellidoMaterno">Apellido Materno:     </h3>  <input type="text" class="form-control" name="apellidoMaterno"/>
                     <br>
@@ -49,7 +49,7 @@
                     <br>
 
                     
-                    <h3 for="correo">Correo:     </h3> <input type="text"  class="form-control"  placeholder="email@example.com">
+                    <h3 for="correo">Correo:     </h3> <input type="text"  class="form-control" name="correo" placeholder="email@example.com">
                     <br>
                     <h3 for="carrera">carrera:</h3>   
                     <?php $carreras = Utils::showCarreras();?>  
@@ -72,7 +72,7 @@
 
             
               <h3 class="mr-sm-2 sr-only" for="sexo">Preference</h3>
-                 <select class="custom-select" id="sexo" required>
+                 <select class="custom-select" id="sexo" name="sexo" required>
                  <option selected>Sexo...</option>
                   <option id="sexo" value="1">Femenino</option>
                   <option id="sexo" value="2">Masculino</option>

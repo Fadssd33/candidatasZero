@@ -68,7 +68,9 @@
                     </div>
                 </div>
             </div>
+         
             <?php
+           
     //footer
     require_once 'views/layout/footer.php'
 ?>

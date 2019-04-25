@@ -201,73 +201,85 @@
                 candidatas a ser reina, si tu candidata favorita no se encuentra en este top no te preocupes ya que aun
                 puede aparecer y darle la vuelta a este juego con el appoyo de los votantes que aun faltan por
                 participar.</p>
+
             <div class="separator separator-danger">∎</div>
         </div>
-        <?php while($topCan = $topCandidatas->fetch_object()):?>
-        <ul class="nav nav-text" role="tablist">
-            <li class="active">
-                <a href="#testimonial<?$topCan->CandidataID?>" role="tab" data-toggle="tab">
 
+        <ul class="nav nav-text" role="tablist">
+            <?php $candidatasArray = array()?>
+            <input type="hidden" name="">
+            <?php while($topCan = $topCandidatas->fetch_object()):?>
+            <?php array_push($candidatasArray, $topCan->CandidataID) ?>
+            <li>
+                <a href="#testimonial<?=$topCan->CandidataID?>" role="tab" data-toggle="tab">
                     <div class="image-clients">
                         <img alt="..." class="img-circle" src="<?=base_url?>uploads/images/<?=$topCan->imagen?>" />
-
                     </div>
                 </a>
             </li>
-            <?php endwhile;?>
-
-
-            <?php while($topCanDescription = $topCandidatas->fetch_object()):?>
-            <div class="tab-content">
-                <div class="tab-pane active" id="testimonial<?$topCan->CandidataID?>">
-                    <p class="description">
-                        descripcion
-                    </p>
-                </div>
-
-
-
-            </div>
 
             <?php endwhile; ?>
+            
+
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="testimonial<?=$candidatasArray[0]?>">
+                <p class="description">
+                    Hola
+                </p>
+            </div>
+
+            <div class="tab-pane active" id="testimonial<?=$candidatasArray[1]?>">
+                <p class="description">
+                    Hola
+                </p>
+            </div>
+            <div class="tab-pane active" id="testimonial<?=$candidatasArray[2]?>">
+                <p class="description">
+                    Puta
+                </p>
+            </div>
+
+        </div>
 
     </div>
+</div>
 
 
-    <div class="section section-small section-get-started">
-        <div class="parallax filter">
-            <div class="image" style="background-image: url('<?=base_url?>assets/img/queen.png')">
+<div class="section section-small section-get-started">
+    <div class="parallax filter">
+        <div class="image" style="background-image: url('<?=base_url?>assets/img/queen.png')">
+        </div>
+        <div class="container">
+            <div class="title-area">
+                <h2 class="text-white">¿Quieres participar como candidata?</h2>
+                <div class="separator line-separator">♦</div>
+                <p class="description">Solo tienes que ser estudiante de la UES, muy gay o puta!</p>
             </div>
-            <div class="container">
-                <div class="title-area">
-                    <h2 class="text-white">¿Quieres participar como candidata?</h2>
-                    <div class="separator line-separator">♦</div>
-                    <p class="description">Solo tienes que ser estudiante de la UES, muy gay o puta!</p>
-                </div>
 
-                <div class="button-get-started">
-                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contacto</a>
-                </div>
+            <div class="button-get-started">
+                <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contacto</a>
             </div>
         </div>
     </div>
+</div>
 
 
 
-    <!--   core js files    -->
-    <script src="<?=base_url?>assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="<?=base_url?>assets/js/bootstrap.js" type="text/javascript"></script>
+<!--   core js files    -->
+<script src="<?=base_url?>assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="<?=base_url?>assets/js/bootstrap.js" type="text/javascript"></script>
 
-    <!--  js library for devices recognition -->
-    <script type="text/javascript" src="<?=base_url?>assets/js/modernizr.js"></script>
+<!--  js library for devices recognition -->
+<script type="text/javascript" src="<?=base_url?>assets/js/modernizr.js"></script>
 
-    <!--  script for google maps   -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<!--  script for google maps   -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
-    <!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
-    <script type="text/javascript" src="<?=base_url?>assets/js/gaia.js"></script>
+<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
+<script type="text/javascript" src="<?=base_url?>assets/js/gaia.js"></script>
 
-    <?php
+<?php
     //footer
     require_once 'views/layout/footer.php';
 ?>
