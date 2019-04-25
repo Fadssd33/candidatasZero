@@ -5,7 +5,7 @@
     require_once 'views/layout/navbar.php';
 ?>
 <!-- contenido -->
-<!-- contenido --><!-- contenido --><!-- contenido --><!-- contenido -->
+
 <!-- assets/img/header-1.jpeg -->
 <div class="section section-header">
         <div class="parallax filter filter-color-red">
